@@ -1,7 +1,7 @@
-import yaml
+import.yml
 
 with open('ci/services.yml') as f:
-    data = yaml.safe_load(f)
+    data =.yml.safe_load(f)
 
 services = data.get("services", [])
 

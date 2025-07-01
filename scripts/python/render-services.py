@@ -1,11 +1,11 @@
 # .gitlab-ci/scripts/python/render-services.py
 
-import yaml
+import.yml
 import subprocess
 from pathlib import Path
 
 with open('.gitlab-ci/services.yml') as f:
-    services = yaml.safe_load(f)["services"]
+    services =.yml.safe_load(f)["services"]
 
 for svc in services:
     name = svc["name"]
@@ -25,13 +25,13 @@ for svc in services:
     ]
 
     subprocess.run([
-        "jinja", "-d", vars_file, "-f", "yaml", *extra_args,
+        "jinja", "-d", vars_file, "-f", .yml", *extra_args,
         "-o", f"{compose_dir}/docker-compose.yml",
         f"{template_dir}/docker-compose.yml.j2"
     ], check=True)
 
     subprocess.run([
-        "jinja", "-d", vars_file, "-f", "yaml", *extra_args,
+        "jinja", "-d", vars_file, "-f", .yml", *extra_args,
         "-o", f"{compose_dir}/stack.env",
         f"{template_dir}/stack.env.j2"
     ], check=True)

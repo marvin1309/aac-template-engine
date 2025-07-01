@@ -1,4 +1,4 @@
-# .gitlab-ci/scripts/shell/generate-services-yaml.sh
+# .gitlab-ci/scripts/shell/generate-services.yml.sh
 
 #!/bin/bash
 mkdir -p .gitlab-ci

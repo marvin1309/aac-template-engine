@@ -41,7 +41,7 @@ collect_services:
     - wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
     - chmod +x /usr/local/bin/yq
   script:
-    - bash .gitlab-ci/scripts/shell/generate-services-yaml.sh
+    - bash .gitlab-ci/scripts/shell/generate-services.yml.sh
   artifacts:
     paths:
       - .gitlab-ci/services.yml
@@ -54,7 +54,7 @@ parse_services:
   dependencies:
     - collect_services
   before_script:
-    - pip install --user --quiet jinja-cli[yaml]
+    - pip install --user --quiet jinja-cli.yml]
     - export PATH="$PATH:$HOME/.local/bin"
   script:
     - python3 .gitlab-ci/scripts/python/render-services.py
