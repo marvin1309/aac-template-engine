@@ -10,7 +10,7 @@ default:
 
 yaml-syntax-check:
   stage: lint
-  image: python:3.12-slim
+  image: python:3.14-slim
   before_script:
     - pip install --no-cache-dir PyYAML
   script:
@@ -26,7 +26,7 @@ yaml-syntax-check:
 
 python-unit-tests:
   stage: test
-  image: python:3.12-slim
+  image: python:3.14-slim
   needs: ["yaml-syntax-check"]
   before_script:
     - pip install --no-cache-dir pytest pyyaml jinja2
